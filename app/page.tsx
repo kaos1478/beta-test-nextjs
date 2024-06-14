@@ -2,6 +2,7 @@ import SelectSortBy from '@/components/SelectSortBy'
 import actions from '@/actions'
 import { ApiResponse } from '@/types'
 import { LoadMore, ProductCard } from '@/components'
+
 import Link from 'next/link'
 
 export default async function Home({

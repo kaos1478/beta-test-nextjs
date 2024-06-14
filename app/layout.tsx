@@ -1,9 +1,11 @@
 import type { Metadata } from 'next'
 import { Inter } from 'next/font/google'
+import { Suspense } from 'react'
 
 import { Navbar } from '@/components'
 import { cn } from '@/lib/utils'
 import { ToastContainer } from 'react-toastify'
+
 import 'react-toastify/dist/ReactToastify.css'
 import './globals.css'
 
@@ -22,15 +24,17 @@ export default function RootLayout({
   const classNames = cn(inter.className, 'w-full max-w-5xl p-6')
 
   return (
-    <html
-      lang="en"
-      className="box-border flex w-full justify-center object-center"
-    >
-      <body className={classNames}>
-        <ToastContainer />
-        <Navbar />
-        {children}
-      </body>
-    </html>
+    <Suspense>
+      <html
+        lang="en"
+        className="box-border flex w-full justify-center object-center"
+      >
+        <body className={classNames}>
+          <ToastContainer />
+          <Navbar />
+          {children}
+        </body>
+      </html>
+    </Suspense>
   )
 }
