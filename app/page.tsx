@@ -31,7 +31,7 @@ export default async function Home({
             {data.products.map((item, index) => (
               <Link
                 key={`product-card-${item.id}-${index}`}
-                href={`/product/edit/${item.id}`}
+                href={`/product/${item.id}`}
               >
                 <ProductCard product={item} />
               </Link>
