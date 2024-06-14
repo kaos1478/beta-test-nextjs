@@ -1,6 +1,6 @@
 'use server'
 
-import { ApiResponse } from '@/types'
+import { ApiResponse, Product } from '@/types'
 
 export const fetchProducts = async ({
   limit,
@@ -22,6 +22,54 @@ export const fetchProducts = async ({
   }
 
   const response = await fetch(tempUrl)
+
+  const data = await response.json()
+
+  return data
+}
+
+export const fetchProduct = async (id: string) => {
+  const response = await fetch(`https://dummyjson.com/products/${id}`)
+
+  const data = await response.json()
+
+  return data
+}
+
+export const updateProduct = async ({
+  id,
+  product,
+}: {
+  id: string
+  product: Product
+}) => {
+  const response = await fetch(`https://dummyjson.com/products/${id}`, {
+    method: 'PUT',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(product),
+  })
+
+  const data = await response.json()
+
+  return data
+}
+
+export const deleteProduct = async (id: string) => {
+  const response = await fetch(`https://dummyjson.com/products/${id}`, {
+    method: 'DELETE',
+  })
+
+  const data = await response.json()
+
+  return data
+}
+
+export const createProduct = async (product: Product) => {
+  const response = await fetch('https://dummyjson.com/products/add', {
+    method: 'POST',
+    headers: { 'Content-Type': 'application/json' },
+    body: JSON.stringify(product),
+  })
 
   const data = await response.json()
 

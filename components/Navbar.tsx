@@ -31,7 +31,7 @@ const Navbar = () => {
         <Link href="/">
           <h1 className="text-2xl font-bold sm:text-3xl">Beta</h1>
         </Link>
-        <div className="mt-5 sm:mt-0">
+        <div className="mt-5 flex sm:mt-0">
           <form action={handleFormAction}>
             <Input
               defaultValue={search || ''}
@@ -43,6 +43,12 @@ const Navbar = () => {
             />
             <Button className="ml-3">Search</Button>
           </form>
+
+          <Link href="/product/create">
+            <Button className="ml-3 border border-black bg-transparent text-black">
+              Add
+            </Button>
+          </Link>
         </div>
       </nav>
     </header>

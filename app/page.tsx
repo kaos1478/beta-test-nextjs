@@ -2,6 +2,7 @@ import SelectSortBy from '@/components/SelectSortBy'
 import actions from '@/actions'
 import { ApiResponse } from '@/types'
 import { LoadMore, ProductCard } from '@/components'
+import Link from 'next/link'
 
 export default async function Home({
   searchParams,
@@ -27,10 +28,12 @@ export default async function Home({
         {data?.products?.length ? (
           <>
             {data.products.map((item, index) => (
-              <ProductCard
+              <Link
                 key={`product-card-${item.id}-${index}`}
-                product={item}
-              />
+                href={`/product/edit/${item.id}`}
+              >
+                <ProductCard product={item} />
+              </Link>
             ))}
             <LoadMore sortBy={sortBy} search={search} />
           </>

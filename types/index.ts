@@ -1,17 +1,15 @@
-interface Dimensions {
-  length: number
+export interface Dimensions {
   width: number
   height: number
+  depth: number
 }
 
-interface Review {
-  user: string
-  comment: string
+export interface Review {
   rating: number
-}
-
-interface Meta {
-  [key: string]: unknown
+  comment: string
+  date: string
+  reviewerName: string
+  reviewerEmail: string
 }
 
 export interface Product {
@@ -34,7 +32,12 @@ export interface Product {
   reviews: Review[]
   returnPolicy: string
   minimumOrderQuantity: number
-  meta: Meta
+  meta: {
+    createdAt: string
+    updatedAt: string
+    barcode: string
+    qrCode: string
+  }
   images: string[]
   thumbnail: string
 }
