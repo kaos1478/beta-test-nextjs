@@ -67,7 +67,7 @@ const Product = async ({ params }: { params: { id: string } }) => {
           <p className="mb-2 text-gray-600">
             <strong>Barcode:</strong> {data.meta.barcode}
           </p>
-          <Link legacyBehavior href={`/edit-product/${data.id}`}>
+          <Link legacyBehavior href={`/product/edit/${data.id}`}>
             <a className="mt-4 inline-block rounded bg-blue-500 px-4 py-2 text-white hover:bg-blue-700">
               Edit Product
             </a>
