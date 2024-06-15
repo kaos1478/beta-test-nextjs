@@ -13,7 +13,9 @@ const Navbar = () => {
   const params = new URLSearchParams(searchParams)
   const search = params.get('search')
 
-  const handleFormAction = (formData: FormData) => {
+  const handleFormSubmit = (event: React.FormEvent) => {
+    event.preventDefault()
+    const formData = new FormData(event.currentTarget as HTMLFormElement)
     const searchText = formData.get('search')
 
     if (searchText) {
@@ -32,7 +34,7 @@ const Navbar = () => {
           <h1 className="text-2xl font-bold text-white sm:text-3xl">Beta</h1>
         </Link>
         <div className="mt-5 flex sm:mt-0">
-          <form action={handleFormAction}>
+          <form onSubmit={handleFormSubmit}>
             <Input
               defaultValue={search || ''}
               type="text"
@@ -41,7 +43,10 @@ const Navbar = () => {
               placeholder="Phone"
               className="w-40"
             />
-            <Button className="ml-3 bg-blue-500 font-semibold hover:bg-blue-700">
+            <Button
+              type="submit"
+              className="ml-3 bg-blue-500 font-semibold hover:bg-blue-700"
+            >
               Search
             </Button>
           </form>
