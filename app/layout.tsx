@@ -21,18 +21,18 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode
 }>) {
-  const classNames = cn(inter.className, 'w-full max-w-5xl p-6')
+  const classNames = cn(
+    inter.className,
+    'box-border flex w-full justify-center items-center flex-col',
+  ) // 'w-full max-w-5xl p-6'
 
   return (
     <Suspense>
-      <html
-        lang="en"
-        className="box-border flex w-full justify-center object-center"
-      >
+      <html lang="en">
         <body className={classNames}>
           <ToastContainer />
           <Navbar />
-          {children}
+          <div className="w-full max-w-5xl p-6">{children}</div>
         </body>
       </html>
     </Suspense>

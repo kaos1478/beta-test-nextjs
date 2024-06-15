@@ -6,7 +6,10 @@ const Input = ({
   className,
   ...props
 }: InputHTMLAttributes<HTMLInputElement>) => {
-  const classNames = cn('border-stroke h-12 rounded-md border px-2', className)
+  const classNames = cn(
+    'border-stroke h-12 rounded-md border px-2 bg-slate-100',
+    className,
+  )
 
   return <input className={classNames} {...props} />
 }

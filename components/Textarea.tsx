@@ -6,7 +6,10 @@ const Textarea = ({
   className,
   ...props
 }: TextareaHTMLAttributes<HTMLTextAreaElement>) => {
-  const classNames = cn('border-stroke rounded-md border px-2 py-1', className)
+  const classNames = cn(
+    'border-stroke rounded-md border px-2 py-1 bg-slate-100',
+    className,
+  )
 
   return <textarea className={classNames} {...props} />
 }

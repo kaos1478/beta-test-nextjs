@@ -8,7 +8,7 @@ const Button = ({
   ...props
 }: ButtonHTMLAttributes<HTMLButtonElement>) => {
   const classNames = cn(
-    'rounded-md bg-black px-4 font-medium text-white h-12',
+    'rounded-md bg-black px-4 font-medium text-white h-12 duration-500',
     className,
   )
 
