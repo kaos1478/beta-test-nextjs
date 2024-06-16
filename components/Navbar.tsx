@@ -34,25 +34,25 @@ const Navbar = () => {
           <h1 className="text-2xl font-bold text-white sm:text-3xl">Beta</h1>
         </Link>
         <div className="mt-5 flex sm:mt-0">
-          <form onSubmit={handleFormSubmit}>
+          <form onSubmit={handleFormSubmit} className="flex">
             <Input
               defaultValue={search || ''}
               type="text"
               id="search"
               name="search"
               placeholder="Phone"
-              className="w-40"
+              className="w-32 sm:w-40"
             />
             <Button
               type="submit"
-              className="ml-3 bg-blue-500 font-semibold hover:bg-blue-700"
+              className="ml-2 bg-blue-500 px-2 font-semibold hover:bg-blue-700 sm:px-4"
             >
               Search
             </Button>
           </form>
 
           <Link href="/product/create">
-            <Button className="ml-3 border border-white bg-transparent text-white">
+            <Button className="ml-2 border border-white bg-transparent px-2 text-white sm:px-4">
               New
             </Button>
           </Link>

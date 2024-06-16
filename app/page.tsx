@@ -1,9 +1,10 @@
+import Link from 'next/link'
+import { Suspense } from 'react'
+
 import SelectSortBy from '@/components/SelectSortBy'
 import actions from '@/actions'
 import { ApiResponse } from '@/types'
 import { LoadMore, ProductCard } from '@/components'
-
-import Link from 'next/link'
 
 export default async function Home({
   searchParams,
@@ -23,7 +24,9 @@ export default async function Home({
     <main className="">
       <div className="flex items-center justify-between">
         <h2 className="text-2xl">Products</h2>
-        <SelectSortBy sortBy={sortBy} />
+        <Suspense>
+          <SelectSortBy sortBy={sortBy} />
+        </Suspense>
       </div>
       <section>
         {data?.products?.length ? (

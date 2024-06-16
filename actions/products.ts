@@ -28,7 +28,7 @@ export const fetchProducts = async ({
   return data
 }
 
-export const fetchProduct = async (id: string) => {
+export const fetchProduct = async (id: Product['id']) => {
   const response = await fetch(`https://dummyjson.com/products/${id}`)
 
   const data = await response.json()
@@ -40,7 +40,7 @@ export const updateProduct = async ({
   id,
   product,
 }: {
-  id: string
+  id: Product['id']
   product: Product
 }) => {
   const response = await fetch(`https://dummyjson.com/products/${id}`, {
@@ -54,7 +54,7 @@ export const updateProduct = async ({
   return data
 }
 
-export const deleteProduct = async (id: string) => {
+export const deleteProduct = async (id: Product['id']) => {
   const response = await fetch(`https://dummyjson.com/products/${id}`, {
     method: 'DELETE',
   })
@@ -64,7 +64,7 @@ export const deleteProduct = async (id: string) => {
   return data
 }
 
-export const createProduct = async (product: Product) => {
+export const createProduct = async ({ product }: { product: Product }) => {
   const response = await fetch('https://dummyjson.com/products/add', {
     method: 'POST',
     headers: { 'Content-Type': 'application/json' },

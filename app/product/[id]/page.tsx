@@ -4,7 +4,9 @@ import Image from 'next/image'
 import Link from 'next/link'
 
 const Product = async ({ params }: { params: { id: string } }) => {
-  const data: TProduct = await actions.fetchProduct(params.id)
+  const parsedId = Number(params.id)
+
+  const data: TProduct = await actions.fetchProduct(parsedId)
 
   return (
     <div className="container mx-auto p-4">

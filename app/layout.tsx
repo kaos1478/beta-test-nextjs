@@ -6,7 +6,6 @@ import { Navbar } from '@/components'
 import { cn } from '@/lib/utils'
 import { ToastContainer } from 'react-toastify'
 
-import 'react-toastify/dist/ReactToastify.css'
 import './globals.css'
 
 const inter = Inter({ subsets: ['latin'] })
@@ -27,14 +26,14 @@ export default function RootLayout({
   ) // 'w-full max-w-5xl p-6'
 
   return (
-    <Suspense>
-      <html lang="en">
-        <body className={classNames}>
-          <ToastContainer />
+    <html lang="en">
+      <body className={classNames}>
+        <ToastContainer />
+        <Suspense>
           <Navbar />
-          <div className="w-full max-w-5xl p-6">{children}</div>
-        </body>
-      </html>
-    </Suspense>
+        </Suspense>
+        <div className="w-full max-w-5xl p-6">{children}</div>
+      </body>
+    </html>
   )
 }
