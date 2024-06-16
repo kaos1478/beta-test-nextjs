@@ -1,36 +1,55 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Projeto React/Next.js Beta Test
+Este é um projeto [Next.js](https://nextjs.org/) e foi hospedado em [https://beta-test-nextjs.vercel.app/](https://beta-test-nextjs.vercel.app/).
 
-## Getting Started
+## Tecnologias Utilizadas
 
-First, run the development server:
+- **Next.js**: Framework React para renderização do lado do servidor (SSR).
+- **React**: Biblioteca JavaScript para construção de interfaces de usuário.
+- **Tailwind CSS**: Framework CSS utilitário para estilização rápida e eficiente.
+- **Zod**: Biblioteca para validação de esquemas de dados em TypeScript.
+- **Jest**: Framework de teste de JavaScript.
+- **Husky**: Ferramenta para execução de scripts pré-commit e pré-push.
+- **Commitizen**: Utilitário para facilitar commits conforme convenção.
+- **ESLint**: Ferramenta de linting para JavaScript e TypeScript.
+- **Prettier**: Formatador de código para manter consistência no estilo de código.
+- **TypeScript**: Linguagem de programação superset do JavaScript.
+- **PostCSS**: Ferramenta para transformar CSS com JavaScript.
+- **Autoprefixer**: Plugin PostCSS para adicionar prefixos de vendor automaticamente.
+- **React Icons**: Biblioteca de ícones para React.
+- **React Intersection Observer**: Componente React para observar elementos entrando e saindo da visão do usuário.
+- **React Toastify**: Biblioteca para exibir notificações toast em React.
+- **clsx**: Utilitário para gerar strings de classe condicionalmente.
+
+## Como executar
+
+Modo desenvolvedor:
 
 ```bash
+npm install
+# and
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Testes unitários:
+```bash
+npm run test
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+Commit com patterns/lint:
+```bash
+npm run commit
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+Abra [http://localhost:3000](http://localhost:3000) para ver o resultado.
 
-## Learn More
+## Nota pessoal.
 
-To learn more about Next.js, take a look at the following resources:
+Este projeto foi criado utilizando NextJS 14 e foram utilizados conceitos relativamente novos como [Server Actions](https://nextjs.org/docs/app/building-your-application/data-fetching/server-actions-and-mutations), [App Router](https://nextjs.org/docs/app/building-your-application/upgrading/app-router-migration), [Server and Client Composition](https://nextjs.org/docs/app/building-your-application/rendering/composition-patterns).
+Todas as rotas são renderizadas no lado do servidor (server-side rendering). Para validação de formulários, foi adotado o Zod para eficiência na implementação.
+Testes básicos foram incluídos por questões de tempo. Este é um projeto de teste React, portanto, não foi desenvolvida uma camada de backend, conforme não especificado.
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Informativo padrão
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+Este projeto não está disponível para uso comercial
+Tempo de desenvolvimento: 13:52:00 (aproximadamente)
+Informações de contato: [Portfolio](https://www.brunohenriqueweb.com/)
